@@ -1,0 +1,14 @@
+---
+version: "3"
+
+networks:
+  loki:
+
+services:
+  promtail:
+    image: grafana/promtail:2.8.0
+    volumes:
+      - ./promtail-local-config.yaml:/etc/promtail/config.yaml:ro
+    command: -config.file=/etc/promtail/config.yaml
+    networks:
+      - loki

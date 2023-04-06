@@ -1,0 +1,13 @@
+apiVersion: 1
+
+providers:
+  - name: dashboards # A uniquely identifiable name for the provider
+    folder: Chia # The folder where to place the dashboards
+    type: file
+    # <bool> allow updating provisioned dashboards from the UI
+    allowUiUpdates: true
+    options:
+      path: /etc/grafana/dashboards
+        # Default path for Windows: C:/Program Files/GrafanaLabs/grafana/public/dashboards
+        # Default path for Linux is: /var/lib/grafana/dashboards
+
